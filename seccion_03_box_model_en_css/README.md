@@ -1,62 +1,100 @@
-# curso_universidad_css
+# Sección 3 Box Model en CSS
 
----
+![alt text](box_model.png)
 
-Un curso de CSS (Cascading Style Sheets) está diseñado para enseñar a los estudiantes cómo usar CSS para diseñar y estilizar páginas web. CSS es el lenguaje utilizado para describir la presentación de un documento escrito en HTML o XML. Aquí tienes una descripción general de lo que podría cubrir un curso de CSS:
+El Box Model es un concepto fundamental en CSS que describe cómo se calculan y se estructuran los elementos en una página web. Cada elemento en una página web se representa como una caja rectangular, y el Box Model define la estructura y el espacio que rodea a ese elemento. Comprender el Box Model es crucial para controlar el diseño y la apariencia de los elementos en una página web. 
 
-### Introducción a CSS
-- **¿Qué es CSS?**: Explicación de CSS y su relación con HTML.
-- **Sintaxis Básica**: Selectores, propiedades y valores.
-- **Cómo Incluir CSS en HTML**:
-  - CSS en línea (inline).
-  - CSS interno (en la etiqueta `<style>`).
-  - CSS externo (en archivos `.css`).
+### Componentes del Box Model
+El Box Model de CSS está compuesto por cuatro partes principales:
 
-### Selectores y Propiedades
-- **Selectores Básicos**: Tipo, clase, ID.
-- **Selectores de Atributo**: `[atributo]`, `[atributo=valor]`.
-- **Selectores de Pseudoclases**: `:hover`, `:active`, `:nth-child()`.
-- **Selectores de Pseudoelementos**: `::before`, `::after`.
+1. **Contenido (Content)**:
+   - Es el área donde se muestra el contenido del elemento, como texto, imágenes, etc.
+   - Las propiedades `width` y `height` determinan el tamaño del área de contenido.
 
-### Box Model
-- **Concepto de Box Model**: Content, padding, border, margin.
-- **Manipulación del Box Model**: Propiedades como `width`, `height`, `padding`, `border`, `margin`.
+2. **Relleno (Padding)**:
+   - Es el espacio entre el contenido y el borde del elemento.
+   - Se puede definir usando las propiedades `padding-top`, `padding-right`, `padding-bottom` y `padding-left`, o en forma abreviada como `padding`.
 
-### Estilización de Texto y Fuentes
-- **Propiedades de Texto**: `color`, `font-family`, `font-size`, `font-weight`, `line-height`, `text-align`, `text-decoration`.
-- **Fuentes Web**: Uso de fuentes externas como Google Fonts.
+   ```css
+   padding: 10px; /* Relleno de 10px en todos los lados */
+   padding: 10px 20px; /* 10px arriba y abajo, 20px a los lados */
+   ```
 
-### Colores y Fondos
-- **Colores**: Colores por nombre, hexadecimales, RGB, RGBA, HSL.
-- **Fondos**: `background-color`, `background-image`, `background-repeat`, `background-position`, `background-size`.
+3. **Borde (Border)**:
+   - Es el contorno alrededor del contenido y el relleno del elemento.
+   - Se puede definir usando las propiedades `border-width`, `border-style` y `border-color`, o en forma abreviada como `border`.
 
-### Diseño y Layout
-- **Display y Visibilidad**: `display`, `visibility`.
-- **Positioning**: `static`, `relative`, `absolute`, `fixed`, `sticky`.
-- **Float y Clear**: `float`, `clear`.
-- **Flexbox**: Conceptos básicos y propiedades (`display: flex`, `justify-content`, `align-items`, etc.).
-- **Grid Layout**: Conceptos básicos y propiedades (`display: grid`, `grid-template-columns`, `grid-template-rows`, etc.).
+   ```css
+   border: 1px solid black; /* Borde sólido de 1px de ancho y color negro */
+   ```
 
-### Animaciones y Transiciones
-- **Transiciones**: `transition-property`, `transition-duration`, `transition-timing-function`.
-- **Animaciones**: `@keyframes`, `animation-name`, `animation-duration`, `animation-timing-function`.
+4. **Margen (Margin)**:
+   - Es el espacio exterior que separa el elemento de otros elementos.
+   - Se puede definir usando las propiedades `margin-top`, `margin-right`, `margin-bottom` y `margin-left`, o en forma abreviada como `margin`.
 
-### Responsive Design
-- **Media Queries**: Uso de media queries para adaptar el diseño a diferentes tamaños de pantalla.
-- **Diseño Fluido**: Uso de unidades relativas como `%`, `em`, `rem`.
-- **Frameworks de CSS**: Introducción a frameworks como Bootstrap para facilitar el diseño responsivo.
+   ```css
+   margin: 10px; /* Margen de 10px en todos los lados */
+   margin: 10px 20px; /* 10px arriba y abajo, 20px a los lados */
+   ```
 
-### Buenas Prácticas y Optimización
-- **Organización del Código**: Estructurar CSS de manera clara y mantenible.
-- **Preprocesadores de CSS**: Introducción a Sass y LESS.
-- **Optimización del Rendimiento**: Minimización de CSS, uso eficiente de selectores.
+### Ejemplo del Box Model
 
-### Proyectos Prácticos
-- **Diseño de una Página Web Completa**: Aplicación de los conceptos aprendidos para crear un sitio web desde cero.
-- **Desafíos y Ejercicios**: Ejercicios prácticos para reforzar el aprendizaje.
+Supongamos que tienes el siguiente HTML y CSS:
 
-### Recursos Adicionales
-- **Documentación y Recursos**: MDN Web Docs, CSS-Tricks, W3Schools.
-- **Herramientas y Extensiones**: DevTools en navegadores, editores de código como Visual Studio Code.
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 100px;
+            padding: 20px;
+            border: 5px solid blue;
+            margin: 10px;
+            background-color: lightgrey;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">Este es un ejemplo del Box Model.</div>
+</body>
+</html>
+```
 
-Este es un esquema básico que puede variar según la profundidad y el enfoque del curso. Un buen curso de CSS debe combinar teoría con mucha práctica, ya que la mejor manera de aprender CSS es aplicándolo a proyectos reales.
+### Cálculo del Tamaño Total del Elemento
+
+Para calcular el tamaño total de la caja, se suman las dimensiones del contenido, el relleno, el borde y el margen. En el ejemplo anterior:
+
+- **Ancho del contenido**: 200px
+- **Alto del contenido**: 100px
+- **Relleno**: 20px (en todos los lados)
+- **Borde**: 5px (en todos los lados)
+- **Margen**: 10px (en todos los lados)
+
+El tamaño total del elemento es:
+
+- **Ancho total**: 200px (contenido) + 40px (relleno: 20px a cada lado) + 10px (borde: 5px a cada lado) = 250px
+- **Alto total**: 100px (contenido) + 40px (relleno: 20px arriba y abajo) + 10px (borde: 5px arriba y abajo) = 150px
+
+### Box-Sizing
+
+La propiedad `box-sizing` permite controlar cómo se calculan los tamaños de las cajas:
+
+- **`content-box`** (valor por defecto): Solo el contenido tiene en cuenta el ancho y el alto especificados. El relleno y el borde se añaden al tamaño total.
+- **`border-box`**: El ancho y el alto incluyen el contenido, el relleno y el borde. El margen sigue siendo externo.
+
+```css
+.box {
+    box-sizing: border-box;
+}
+```
+
+Al usar `box-sizing: border-box;`, el tamaño total de la caja se mantendrá dentro de los 200px de ancho y 100px de alto especificados, y el relleno y el borde se ajustarán dentro de esos valores.
+
+### Conclusión
+
+El Box Model en CSS es esencial para diseñar y entender cómo se renderizan los elementos en una página web. Dominar el Box Model te permitirá crear diseños más precisos y controlados, y solucionar problemas comunes relacionados con el espaciado y el tamaño de los elementos.
