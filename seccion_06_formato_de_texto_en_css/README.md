@@ -1,62 +1,155 @@
-# curso_universidad_css
+# Formato de Texto en CSS
 
 ---
 
-Un curso de CSS (Cascading Style Sheets) está diseñado para enseñar a los estudiantes cómo usar CSS para diseñar y estilizar páginas web. CSS es el lenguaje utilizado para describir la presentación de un documento escrito en HTML o XML. Aquí tienes una descripción general de lo que podría cubrir un curso de CSS:
+El formato de texto en CSS incluye una variedad de propiedades que permiten estilizar y mejorar la presentación del texto en las páginas web. Aquí tienes una explicación detallada sobre las propiedades más comunes usadas para formatear texto en CSS:
 
-### Introducción a CSS
-- **¿Qué es CSS?**: Explicación de CSS y su relación con HTML.
-- **Sintaxis Básica**: Selectores, propiedades y valores.
-- **Cómo Incluir CSS en HTML**:
-  - CSS en línea (inline).
-  - CSS interno (en la etiqueta `<style>`).
-  - CSS externo (en archivos `.css`).
+### Propiedades de Color
+- **`color`**: Define el color del texto.
 
-### Selectores y Propiedades
-- **Selectores Básicos**: Tipo, clase, ID.
-- **Selectores de Atributo**: `[atributo]`, `[atributo=valor]`.
-- **Selectores de Pseudoclases**: `:hover`, `:active`, `:nth-child()`.
-- **Selectores de Pseudoelementos**: `::before`, `::after`.
+  ```css
+  p {
+      color: blue;
+  }
+  ```
 
-### Box Model
-- **Concepto de Box Model**: Content, padding, border, margin.
-- **Manipulación del Box Model**: Propiedades como `width`, `height`, `padding`, `border`, `margin`.
+### Propiedades de Fuente
+- **`font-family`**: Especifica la familia de fuentes del texto. Puedes listar múltiples fuentes como alternativas.
 
-### Estilización de Texto y Fuentes
-- **Propiedades de Texto**: `color`, `font-family`, `font-size`, `font-weight`, `line-height`, `text-align`, `text-decoration`.
-- **Fuentes Web**: Uso de fuentes externas como Google Fonts.
+  ```css
+  p {
+      font-family: Arial, sans-serif;
+  }
+  ```
 
-### Colores y Fondos
-- **Colores**: Colores por nombre, hexadecimales, RGB, RGBA, HSL.
-- **Fondos**: `background-color`, `background-image`, `background-repeat`, `background-position`, `background-size`.
+- **`font-size`**: Define el tamaño de la fuente. Puede especificarse en píxeles (`px`), ems (`em`), rems (`rem`), porcentajes (`%`), etc.
 
-### Diseño y Layout
-- **Display y Visibilidad**: `display`, `visibility`.
-- **Positioning**: `static`, `relative`, `absolute`, `fixed`, `sticky`.
-- **Float y Clear**: `float`, `clear`.
-- **Flexbox**: Conceptos básicos y propiedades (`display: flex`, `justify-content`, `align-items`, etc.).
-- **Grid Layout**: Conceptos básicos y propiedades (`display: grid`, `grid-template-columns`, `grid-template-rows`, etc.).
+  ```css
+  p {
+      font-size: 16px;
+  }
+  ```
 
-### Animaciones y Transiciones
-- **Transiciones**: `transition-property`, `transition-duration`, `transition-timing-function`.
-- **Animaciones**: `@keyframes`, `animation-name`, `animation-duration`, `animation-timing-function`.
+- **`font-weight`**: Define el grosor del texto. Los valores comunes son `normal`, `bold`, `bolder`, `lighter`, o un número entre 100 y 900.
 
-### Responsive Design
-- **Media Queries**: Uso de media queries para adaptar el diseño a diferentes tamaños de pantalla.
-- **Diseño Fluido**: Uso de unidades relativas como `%`, `em`, `rem`.
-- **Frameworks de CSS**: Introducción a frameworks como Bootstrap para facilitar el diseño responsivo.
+  ```css
+  p {
+      font-weight: bold;
+  }
+  ```
 
-### Buenas Prácticas y Optimización
-- **Organización del Código**: Estructurar CSS de manera clara y mantenible.
-- **Preprocesadores de CSS**: Introducción a Sass y LESS.
-- **Optimización del Rendimiento**: Minimización de CSS, uso eficiente de selectores.
+- **`font-style`**: Define el estilo de la fuente. Los valores comunes son `normal`, `italic`, y `oblique`.
 
-### Proyectos Prácticos
-- **Diseño de una Página Web Completa**: Aplicación de los conceptos aprendidos para crear un sitio web desde cero.
-- **Desafíos y Ejercicios**: Ejercicios prácticos para reforzar el aprendizaje.
+  ```css
+  p {
+      font-style: italic;
+  }
+  ```
 
-### Recursos Adicionales
-- **Documentación y Recursos**: MDN Web Docs, CSS-Tricks, W3Schools.
-- **Herramientas y Extensiones**: DevTools en navegadores, editores de código como Visual Studio Code.
+- **`font-variant`**: Especifica si el texto debe mostrarse en una variante especial. Un valor común es `small-caps`.
 
-Este es un esquema básico que puede variar según la profundidad y el enfoque del curso. Un buen curso de CSS debe combinar teoría con mucha práctica, ya que la mejor manera de aprender CSS es aplicándolo a proyectos reales.
+  ```css
+  p {
+      font-variant: small-caps;
+  }
+  ```
+
+- **`line-height`**: Define la altura de la línea. Puede ayudar a mejorar la legibilidad del texto.
+
+  ```css
+  p {
+      line-height: 1.5;
+  }
+  ```
+
+### Propiedades de Alineación y Espaciado
+- **`text-align`**: Define la alineación horizontal del texto. Los valores comunes son `left`, `right`, `center`, y `justify`.
+
+  ```css
+  p {
+      text-align: center;
+  }
+  ```
+
+- **`text-indent`**: Define la indentación de la primera línea del texto.
+
+  ```css
+  p {
+      text-indent: 20px;
+  }
+  ```
+
+- **`letter-spacing`**: Define el espacio entre caracteres.
+
+  ```css
+  p {
+      letter-spacing: 2px;
+  }
+  ```
+
+- **`word-spacing`**: Define el espacio entre palabras.
+
+  ```css
+  p {
+      word-spacing: 4px;
+  }
+  ```
+
+### Decoración del Texto
+- **`text-decoration`**: Añade decoraciones al texto. Los valores comunes son `none`, `underline`, `overline`, `line-through`, y combinaciones de estos.
+
+  ```css
+  p {
+      text-decoration: underline;
+  }
+  ```
+
+### Transformación del Texto
+- **`text-transform`**: Controla la capitalización del texto. Los valores comunes son `none`, `capitalize`, `uppercase`, y `lowercase`.
+
+  ```css
+  p {
+      text-transform: uppercase;
+  }
+  ```
+
+### Sombra del Texto
+- **`text-shadow`**: Añade una sombra al texto. Los valores incluyen el desplazamiento horizontal y vertical, el desenfoque, y el color de la sombra.
+
+  ```css
+  p {
+      text-shadow: 2px 2px 5px gray;
+  }
+  ```
+
+### Ejemplo Completo
+
+Aquí tienes un ejemplo que utiliza varias propiedades de formato de texto:
+
+```css
+p {
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.6;
+    text-align: justify;
+    text-indent: 30px;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    text-decoration: underline;
+    text-transform: capitalize;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+```
+
+```html
+<p>
+    Este es un ejemplo de texto que utiliza varias propiedades de formato en CSS para mejorar su presentación y legibilidad.
+</p>
+```
+
+### Conclusión
+
+El formato de texto en CSS ofrece una gran variedad de opciones para estilizar el texto de manera efectiva, mejorando tanto la estética como la legibilidad de las páginas web. Con el uso adecuado de estas propiedades, puedes crear diseños atractivos y profesionales.
