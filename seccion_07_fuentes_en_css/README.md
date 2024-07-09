@@ -1,62 +1,191 @@
-# curso_universidad_css
+# Fuentes en CSS
 
 ---
 
-Un curso de CSS (Cascading Style Sheets) está diseñado para enseñar a los estudiantes cómo usar CSS para diseñar y estilizar páginas web. CSS es el lenguaje utilizado para describir la presentación de un documento escrito en HTML o XML. Aquí tienes una descripción general de lo que podría cubrir un curso de CSS:
+El manejo de fuentes en CSS es crucial para definir la apariencia y la legibilidad del texto en una página web. CSS ofrece diversas propiedades para especificar y controlar las fuentes. Aquí tienes una guía completa sobre cómo trabajar con fuentes en CSS:
 
-### Introducción a CSS
-- **¿Qué es CSS?**: Explicación de CSS y su relación con HTML.
-- **Sintaxis Básica**: Selectores, propiedades y valores.
-- **Cómo Incluir CSS en HTML**:
-  - CSS en línea (inline).
-  - CSS interno (en la etiqueta `<style>`).
-  - CSS externo (en archivos `.css`).
+### Propiedades de Fuente en CSS
 
-### Selectores y Propiedades
-- **Selectores Básicos**: Tipo, clase, ID.
-- **Selectores de Atributo**: `[atributo]`, `[atributo=valor]`.
-- **Selectores de Pseudoclases**: `:hover`, `:active`, `:nth-child()`.
-- **Selectores de Pseudoelementos**: `::before`, `::after`.
+1. **`font-family`**: Especifica la familia de fuentes para el texto. Se pueden listar múltiples fuentes como alternativas, en caso de que la primera no esté disponible.
 
-### Box Model
-- **Concepto de Box Model**: Content, padding, border, margin.
-- **Manipulación del Box Model**: Propiedades como `width`, `height`, `padding`, `border`, `margin`.
+    ```css
+    p {
+        font-family: "Arial", "Helvetica", sans-serif;
+    }
+    ```
 
-### Estilización de Texto y Fuentes
-- **Propiedades de Texto**: `color`, `font-family`, `font-size`, `font-weight`, `line-height`, `text-align`, `text-decoration`.
-- **Fuentes Web**: Uso de fuentes externas como Google Fonts.
+    - **Fuentes genéricas**: CSS permite el uso de fuentes genéricas como `serif`, `sans-serif`, `monospace`, `cursive`, y `fantasy`.
 
-### Colores y Fondos
-- **Colores**: Colores por nombre, hexadecimales, RGB, RGBA, HSL.
-- **Fondos**: `background-color`, `background-image`, `background-repeat`, `background-position`, `background-size`.
+2. **`font-size`**: Define el tamaño de la fuente. Puede especificarse en varias unidades como píxeles (`px`), puntos (`pt`), ems (`em`), rems (`rem`), porcentajes (`%`), etc.
 
-### Diseño y Layout
-- **Display y Visibilidad**: `display`, `visibility`.
-- **Positioning**: `static`, `relative`, `absolute`, `fixed`, `sticky`.
-- **Float y Clear**: `float`, `clear`.
-- **Flexbox**: Conceptos básicos y propiedades (`display: flex`, `justify-content`, `align-items`, etc.).
-- **Grid Layout**: Conceptos básicos y propiedades (`display: grid`, `grid-template-columns`, `grid-template-rows`, etc.).
+    ```css
+    p {
+        font-size: 16px;
+    }
+    ```
 
-### Animaciones y Transiciones
-- **Transiciones**: `transition-property`, `transition-duration`, `transition-timing-function`.
-- **Animaciones**: `@keyframes`, `animation-name`, `animation-duration`, `animation-timing-function`.
+3. **`font-weight`**: Controla el grosor del texto. Los valores pueden ser `normal`, `bold`, `bolder`, `lighter`, o números entre 100 y 900 (en incrementos de 100).
 
-### Responsive Design
-- **Media Queries**: Uso de media queries para adaptar el diseño a diferentes tamaños de pantalla.
-- **Diseño Fluido**: Uso de unidades relativas como `%`, `em`, `rem`.
-- **Frameworks de CSS**: Introducción a frameworks como Bootstrap para facilitar el diseño responsivo.
+    ```css
+    p {
+        font-weight: bold;
+    }
+    ```
 
-### Buenas Prácticas y Optimización
-- **Organización del Código**: Estructurar CSS de manera clara y mantenible.
-- **Preprocesadores de CSS**: Introducción a Sass y LESS.
-- **Optimización del Rendimiento**: Minimización de CSS, uso eficiente de selectores.
+4. **`font-style`**: Define el estilo de la fuente. Los valores comunes son `normal`, `italic`, y `oblique`.
 
-### Proyectos Prácticos
-- **Diseño de una Página Web Completa**: Aplicación de los conceptos aprendidos para crear un sitio web desde cero.
-- **Desafíos y Ejercicios**: Ejercicios prácticos para reforzar el aprendizaje.
+    ```css
+    p {
+        font-style: italic;
+    }
+    ```
 
-### Recursos Adicionales
-- **Documentación y Recursos**: MDN Web Docs, CSS-Tricks, W3Schools.
-- **Herramientas y Extensiones**: DevTools en navegadores, editores de código como Visual Studio Code.
+5. **`font-variant`**: Controla la variante de la fuente, como `small-caps` para usar mayúsculas pequeñas.
 
-Este es un esquema básico que puede variar según la profundidad y el enfoque del curso. Un buen curso de CSS debe combinar teoría con mucha práctica, ya que la mejor manera de aprender CSS es aplicándolo a proyectos reales.
+    ```css
+    p {
+        font-variant: small-caps;
+    }
+    ```
+
+6. **`line-height`**: Define la altura de la línea. Esto puede mejorar la legibilidad del texto.
+
+    ```css
+    p {
+        line-height: 1.5;
+    }
+    ```
+
+7. **`letter-spacing`**: Ajusta el espacio entre caracteres.
+
+    ```css
+    p {
+        letter-spacing: 2px;
+    }
+    ```
+
+8. **`word-spacing`**: Ajusta el espacio entre palabras.
+
+    ```css
+    p {
+        word-spacing: 4px;
+    }
+    ```
+
+### Uso de Fuentes Web
+
+Las fuentes web permiten a los desarrolladores utilizar fuentes que no están instaladas en el dispositivo del usuario. Esto se logra mediante servicios como Google Fonts o mediante la inclusión de archivos de fuentes en el proyecto.
+
+#### Google Fonts
+
+1. **Incluir Google Fonts**:
+    - Ve a [Google Fonts](https://fonts.google.com/).
+    - Selecciona la fuente deseada y copia el enlace proporcionado.
+
+    ```html
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    ```
+
+2. **Usar la fuente en CSS**:
+
+    ```css
+    body {
+        font-family: 'Roboto', sans-serif;
+    }
+    ```
+
+#### Fuentes Personalizadas (Archivo Local)
+
+1. **Incluir la fuente en tu proyecto**: Descarga la fuente y colócala en tu proyecto, por ejemplo en una carpeta llamada `fonts`.
+
+2. **Declarar la fuente en CSS**:
+
+    ```css
+    @font-face {
+        font-family: 'MiFuentePersonalizada';
+        src: url('fonts/MiFuente.woff2') format('woff2'),
+             url('fonts/MiFuente.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    body {
+        font-family: 'MiFuentePersonalizada', sans-serif;
+    }
+    ```
+
+### Unidades de Tamaño de Fuente
+
+- **Píxeles (`px`)**: Unidad absoluta, comúnmente usada.
+  
+    ```css
+    p {
+        font-size: 16px;
+    }
+    ```
+
+- **Ems (`em`)**: Unidad relativa al tamaño de la fuente del elemento padre.
+
+    ```css
+    p {
+        font-size: 1.5em;
+    }
+    ```
+
+- **Rems (`rem`)**: Unidad relativa al tamaño de la fuente del elemento raíz (`html`).
+
+    ```css
+    p {
+        font-size: 1rem;
+    }
+    ```
+
+- **Porcentajes (`%`)**: También relativo al tamaño de la fuente del elemento padre.
+
+    ```css
+    p {
+        font-size: 100%;
+    }
+    ```
+
+### Ejemplo Completo
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        p {
+            font-size: 1rem;
+            font-weight: 400;
+            font-style: italic;
+            line-height: 1.5;
+            letter-spacing: 0.5px;
+            word-spacing: 2px;
+        }
+    </style>
+    <title>Ejemplo de Fuentes en CSS</title>
+</head>
+<body>
+    <h1>Ejemplo de Uso de Fuentes en CSS</h1>
+    <p>Este es un párrafo que muestra cómo se pueden aplicar diferentes propiedades de fuente usando CSS. Utiliza la fuente 'Roboto' desde Google Fonts.</p>
+</body>
+</html>
+```
+
+### Conclusión
+
+El manejo de fuentes en CSS es fundamental para crear diseños web atractivos y legibles. Con el uso adecuado de las propiedades de fuente y la inclusión de fuentes web, puedes personalizar el texto de tus páginas web para que se adapten a la identidad visual de tu proyecto.
