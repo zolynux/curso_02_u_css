@@ -1,62 +1,207 @@
-# curso_universidad_css
+# Display en CSS
 
 ---
 
-Un curso de CSS (Cascading Style Sheets) está diseñado para enseñar a los estudiantes cómo usar CSS para diseñar y estilizar páginas web. CSS es el lenguaje utilizado para describir la presentación de un documento escrito en HTML o XML. Aquí tienes una descripción general de lo que podría cubrir un curso de CSS:
+La propiedad `display` en CSS es una de las más importantes y versátiles, ya que define cómo se deben mostrar los elementos HTML. Esta propiedad afecta la disposición de los elementos en la página y su relación con otros elementos. Aquí tienes una explicación detallada sobre la propiedad `display` y sus valores más comunes:
 
-### Introducción a CSS
-- **¿Qué es CSS?**: Explicación de CSS y su relación con HTML.
-- **Sintaxis Básica**: Selectores, propiedades y valores.
-- **Cómo Incluir CSS en HTML**:
-  - CSS en línea (inline).
-  - CSS interno (en la etiqueta `<style>`).
-  - CSS externo (en archivos `.css`).
+### Valores de la Propiedad `display`
 
-### Selectores y Propiedades
-- **Selectores Básicos**: Tipo, clase, ID.
-- **Selectores de Atributo**: `[atributo]`, `[atributo=valor]`.
-- **Selectores de Pseudoclases**: `:hover`, `:active`, `:nth-child()`.
-- **Selectores de Pseudoelementos**: `::before`, `::after`.
+1. **`display: block;`**
+   - Los elementos se muestran como bloques, ocupando todo el ancho disponible.
+   - Inicia en una nueva línea.
+   - Ejemplos de elementos con display `block` por defecto: `<div>`, `<h1>`, `<p>`, `<header>`.
 
-### Box Model
-- **Concepto de Box Model**: Content, padding, border, margin.
-- **Manipulación del Box Model**: Propiedades como `width`, `height`, `padding`, `border`, `margin`.
+   ```css
+   div {
+       display: block;
+   }
+   ```
 
-### Estilización de Texto y Fuentes
-- **Propiedades de Texto**: `color`, `font-family`, `font-size`, `font-weight`, `line-height`, `text-align`, `text-decoration`.
-- **Fuentes Web**: Uso de fuentes externas como Google Fonts.
+2. **`display: inline;`**
+   - Los elementos se muestran en línea, dentro del flujo del texto.
+   - Solo ocupan el ancho necesario para su contenido.
+   - No inicia en una nueva línea.
+   - Ejemplos de elementos con display `inline` por defecto: `<span>`, `<a>`, `<strong>`.
 
-### Colores y Fondos
-- **Colores**: Colores por nombre, hexadecimales, RGB, RGBA, HSL.
-- **Fondos**: `background-color`, `background-image`, `background-repeat`, `background-position`, `background-size`.
+   ```css
+   span {
+       display: inline;
+   }
+   ```
 
-### Diseño y Layout
-- **Display y Visibilidad**: `display`, `visibility`.
-- **Positioning**: `static`, `relative`, `absolute`, `fixed`, `sticky`.
-- **Float y Clear**: `float`, `clear`.
-- **Flexbox**: Conceptos básicos y propiedades (`display: flex`, `justify-content`, `align-items`, etc.).
-- **Grid Layout**: Conceptos básicos y propiedades (`display: grid`, `grid-template-columns`, `grid-template-rows`, etc.).
+3. **`display: inline-block;`**
+   - Combina características de `block` e `inline`.
+   - Se comporta como un elemento en línea pero puede tener un ancho y alto especificados.
+   - No inicia en una nueva línea.
 
-### Animaciones y Transiciones
-- **Transiciones**: `transition-property`, `transition-duration`, `transition-timing-function`.
-- **Animaciones**: `@keyframes`, `animation-name`, `animation-duration`, `animation-timing-function`.
+   ```css
+   img {
+       display: inline-block;
+   }
+   ```
 
-### Responsive Design
-- **Media Queries**: Uso de media queries para adaptar el diseño a diferentes tamaños de pantalla.
-- **Diseño Fluido**: Uso de unidades relativas como `%`, `em`, `rem`.
-- **Frameworks de CSS**: Introducción a frameworks como Bootstrap para facilitar el diseño responsivo.
+4. **`display: none;`**
+   - Oculta completamente el elemento, sin ocupar espacio en el documento.
+   - El elemento no se muestra y no afecta el flujo del documento.
 
-### Buenas Prácticas y Optimización
-- **Organización del Código**: Estructurar CSS de manera clara y mantenible.
-- **Preprocesadores de CSS**: Introducción a Sass y LESS.
-- **Optimización del Rendimiento**: Minimización de CSS, uso eficiente de selectores.
+   ```css
+   .oculto {
+       display: none;
+   }
+   ```
 
-### Proyectos Prácticos
-- **Diseño de una Página Web Completa**: Aplicación de los conceptos aprendidos para crear un sitio web desde cero.
-- **Desafíos y Ejercicios**: Ejercicios prácticos para reforzar el aprendizaje.
+5. **`display: flex;`**
+   - Convierte un contenedor en un contenedor flexible, permitiendo usar el modelo de diseño flexbox.
+   - Se utiliza para disponer elementos de manera más compleja, con alineación y distribución controladas.
 
-### Recursos Adicionales
-- **Documentación y Recursos**: MDN Web Docs, CSS-Tricks, W3Schools.
-- **Herramientas y Extensiones**: DevTools en navegadores, editores de código como Visual Studio Code.
+   ```css
+   .contenedor {
+       display: flex;
+   }
+   ```
 
-Este es un esquema básico que puede variar según la profundidad y el enfoque del curso. Un buen curso de CSS debe combinar teoría con mucha práctica, ya que la mejor manera de aprender CSS es aplicándolo a proyectos reales.
+6. **`display: grid;`**
+   - Convierte un contenedor en un contenedor de cuadrícula, permitiendo usar el modelo de diseño grid.
+   - Facilita la creación de diseños bidimensionales, con filas y columnas.
+
+   ```css
+   .grid {
+       display: grid;
+   }
+   ```
+
+7. **`display: inline-flex;`**
+   - Similar a `flex`, pero se comporta como un elemento en línea.
+   - El contenedor flexible no inicia en una nueva línea y se adapta al flujo del texto.
+
+   ```css
+   .inline-contenedor {
+       display: inline-flex;
+   }
+   ```
+
+8. **`display: inline-grid;`**
+   - Similar a `grid`, pero se comporta como un elemento en línea.
+   - El contenedor de cuadrícula no inicia en una nueva línea y se adapta al flujo del texto.
+
+   ```css
+   .inline-grid {
+       display: inline-grid;
+   }
+   ```
+
+9. **`display: table;`**
+   - Hace que un elemento se comporte como una tabla.
+   - Es útil para crear diseños de tabla sin usar elementos de tabla HTML.
+
+   ```css
+   .tabla {
+       display: table;
+   }
+   ```
+
+10. **`display: table-row;` y `display: table-cell;`**
+    - Usados dentro de un contenedor con `display: table;`, hacen que los elementos se comporten como filas y celdas de tabla, respectivamente.
+
+    ```css
+    .fila {
+        display: table-row;
+    }
+    .celda {
+        display: table-cell;
+    }
+    ```
+
+### Ejemplos Prácticos
+
+#### Bloque vs. En línea
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .block {
+            display: block;
+            background-color: lightblue;
+            margin-bottom: 10px;
+        }
+        .inline {
+            display: inline;
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+<body>
+    <div class="block">Bloque 1</div>
+    <div class="block">Bloque 2</div>
+    <span class="inline">En línea 1</span>
+    <span class="inline">En línea 2</span>
+</body>
+</html>
+```
+
+#### Flexbox
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .flex-container {
+            display: flex;
+            justify-content: space-around;
+            background-color: lightgrey;
+        }
+        .flex-item {
+            background-color: lightcoral;
+            padding: 10px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex-container">
+        <div class="flex-item">Item 1</div>
+        <div class="flex-item">Item 2</div>
+        <div class="flex-item">Item 3</div>
+    </div>
+</body>
+</html>
+```
+
+#### Grid
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            background-color: lightgrey;
+        }
+        .grid-item {
+            background-color: lightcoral;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="grid-item">Item 1</div>
+        <div class="grid-item">Item 2</div>
+        <div class="grid-item">Item 3</div>
+    </div>
+</body>
+</html>
+```
+
+### Conclusión
+La propiedad `display` es fundamental en CSS para controlar cómo se disponen y se comportan los elementos en una página web. Comprender y utilizar adecuadamente esta propiedad permite crear diseños flexibles, adaptativos y visualmente atractivos.
