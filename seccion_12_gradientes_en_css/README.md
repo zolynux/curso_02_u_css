@@ -1,62 +1,148 @@
-# curso_universidad_css
+# Gradientes en CSS
 
 ---
 
-Un curso de CSS (Cascading Style Sheets) está diseñado para enseñar a los estudiantes cómo usar CSS para diseñar y estilizar páginas web. CSS es el lenguaje utilizado para describir la presentación de un documento escrito en HTML o XML. Aquí tienes una descripción general de lo que podría cubrir un curso de CSS:
+Claro, aquí tienes una explicación sobre gradientes, sombras de texto y sombras de caja en CSS:
 
-### Introducción a CSS
-- **¿Qué es CSS?**: Explicación de CSS y su relación con HTML.
-- **Sintaxis Básica**: Selectores, propiedades y valores.
-- **Cómo Incluir CSS en HTML**:
-  - CSS en línea (inline).
-  - CSS interno (en la etiqueta `<style>`).
-  - CSS externo (en archivos `.css`).
+### Gradientes en CSS
 
-### Selectores y Propiedades
-- **Selectores Básicos**: Tipo, clase, ID.
-- **Selectores de Atributo**: `[atributo]`, `[atributo=valor]`.
-- **Selectores de Pseudoclases**: `:hover`, `:active`, `:nth-child()`.
-- **Selectores de Pseudoelementos**: `::before`, `::after`.
+Los gradientes permiten crear transiciones suaves entre dos o más colores. Hay varios tipos de gradientes en CSS:
 
-### Box Model
-- **Concepto de Box Model**: Content, padding, border, margin.
-- **Manipulación del Box Model**: Propiedades como `width`, `height`, `padding`, `border`, `margin`.
+1. **Gradiente lineal (`linear-gradient`)**
+   Un gradiente lineal es una transición suave entre colores a lo largo de una línea recta.
 
-### Estilización de Texto y Fuentes
-- **Propiedades de Texto**: `color`, `font-family`, `font-size`, `font-weight`, `line-height`, `text-align`, `text-decoration`.
-- **Fuentes Web**: Uso de fuentes externas como Google Fonts.
+   ```css
+   .gradiente-lineal {
+     background: linear-gradient(to right, red, yellow);
+   }
+   ```
 
-### Colores y Fondos
-- **Colores**: Colores por nombre, hexadecimales, RGB, RGBA, HSL.
-- **Fondos**: `background-color`, `background-image`, `background-repeat`, `background-position`, `background-size`.
+   En este ejemplo, el gradiente se mueve de rojo a amarillo de izquierda a derecha.
 
-### Diseño y Layout
-- **Display y Visibilidad**: `display`, `visibility`.
-- **Positioning**: `static`, `relative`, `absolute`, `fixed`, `sticky`.
-- **Float y Clear**: `float`, `clear`.
-- **Flexbox**: Conceptos básicos y propiedades (`display: flex`, `justify-content`, `align-items`, etc.).
-- **Grid Layout**: Conceptos básicos y propiedades (`display: grid`, `grid-template-columns`, `grid-template-rows`, etc.).
+2. **Gradiente radial (`radial-gradient`)**
+   Un gradiente radial es una transición suave entre colores que emana desde un punto central.
 
-### Animaciones y Transiciones
-- **Transiciones**: `transition-property`, `transition-duration`, `transition-timing-function`.
-- **Animaciones**: `@keyframes`, `animation-name`, `animation-duration`, `animation-timing-function`.
+   ```css
+   .gradiente-radial {
+     background: radial-gradient(circle, blue, green);
+   }
+   ```
 
-### Responsive Design
-- **Media Queries**: Uso de media queries para adaptar el diseño a diferentes tamaños de pantalla.
-- **Diseño Fluido**: Uso de unidades relativas como `%`, `em`, `rem`.
-- **Frameworks de CSS**: Introducción a frameworks como Bootstrap para facilitar el diseño responsivo.
+   En este ejemplo, el gradiente se mueve de azul a verde desde el centro hacia fuera en forma de círculo.
 
-### Buenas Prácticas y Optimización
-- **Organización del Código**: Estructurar CSS de manera clara y mantenible.
-- **Preprocesadores de CSS**: Introducción a Sass y LESS.
-- **Optimización del Rendimiento**: Minimización de CSS, uso eficiente de selectores.
+3. **Gradiente cónico (`conic-gradient`)**
+   Un gradiente cónico es una transición suave de colores alrededor de un punto central en forma de cono.
 
-### Proyectos Prácticos
-- **Diseño de una Página Web Completa**: Aplicación de los conceptos aprendidos para crear un sitio web desde cero.
-- **Desafíos y Ejercicios**: Ejercicios prácticos para reforzar el aprendizaje.
+   ```css
+   .gradiente-conico {
+     background: conic-gradient(from 0deg, red, yellow, green, blue, red);
+   }
+   ```
 
-### Recursos Adicionales
-- **Documentación y Recursos**: MDN Web Docs, CSS-Tricks, W3Schools.
-- **Herramientas y Extensiones**: DevTools en navegadores, editores de código como Visual Studio Code.
+   En este ejemplo, el gradiente se mueve en forma de cono desde 0 grados, pasando por varios colores y volviendo al rojo.
 
-Este es un esquema básico que puede variar según la profundidad y el enfoque del curso. Un buen curso de CSS debe combinar teoría con mucha práctica, ya que la mejor manera de aprender CSS es aplicándolo a proyectos reales.
+### Sombras de Texto en CSS
+
+La propiedad `text-shadow` permite agregar sombras al texto, creando un efecto de profundidad.
+
+```css
+.sombra-texto {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+```
+
+En este ejemplo, el texto tendrá una sombra negra con un desplazamiento de 2 píxeles hacia la derecha y hacia abajo, y un desenfoque de 4 píxeles.
+
+### Sombras de Caja en CSS
+
+La propiedad `box-shadow` permite agregar sombras a los elementos de caja, como divs, imágenes, etc.
+
+```css
+.sombra-caja {
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+```
+
+En este ejemplo, el elemento tendrá una sombra negra con un desplazamiento de 5 píxeles hacia la derecha y hacia abajo, y un desenfoque de 10 píxeles.
+
+#### Propiedades de `box-shadow`
+
+- **Desplazamiento horizontal (offset-x):** La distancia de la sombra hacia la derecha (valores negativos la desplazan a la izquierda).
+- **Desplazamiento vertical (offset-y):** La distancia de la sombra hacia abajo (valores negativos la desplazan hacia arriba).
+- **Desenfoque (blur-radius):** Cuánto se difumina la sombra (opcional).
+- **Expansión (spread-radius):** Cuánto se expande la sombra (opcional).
+- **Color:** El color de la sombra.
+
+### Ejemplo Completo
+
+Aquí tienes un ejemplo práctico que incluye gradientes, sombras de texto y sombras de caja:
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Gradiente lineal */
+    .gradiente-lineal {
+      background: linear-gradient(to right, red, yellow);
+      width: 100%;
+      height: 100px;
+      margin-bottom: 20px;
+    }
+
+    /* Gradiente radial */
+    .gradiente-radial {
+      background: radial-gradient(circle, blue, green);
+      width: 100%;
+      height: 100px;
+      margin-bottom: 20px;
+    }
+
+    /* Gradiente cónico */
+    .gradiente-conico {
+      background: conic-gradient(from 0deg, red, yellow, green, blue, red);
+      width: 100%;
+      height: 100px;
+      margin-bottom: 20px;
+    }
+
+    /* Sombra de texto */
+    .sombra-texto {
+      font-size: 40px;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      margin-bottom: 20px;
+    }
+
+    /* Sombra de caja */
+    .sombra-caja {
+      width: 200px;
+      height: 100px;
+      background-color: lightblue;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</head>
+<body>
+  <div class="gradiente-lineal"></div>
+  <div class="gradiente-radial"></div>
+  <div class="gradiente-conico"></div>
+
+  <p class="sombra-texto">Texto con sombra</p>
+
+  <div class="sombra-caja"></div>
+</body>
+</html>
+```
+
+### Explicación del Ejemplo
+
+- **.gradiente-lineal:** Div con un fondo de gradiente lineal de rojo a amarillo.
+- **.gradiente-radial:** Div con un fondo de gradiente radial de azul a verde.
+- **.gradiente-conico:** Div con un fondo de gradiente cónico que pasa por varios colores.
+- **.sombra-texto:** Párrafo con sombra de texto negra.
+- **.sombra-caja:** Div con una sombra de caja negra.
+
+Estos estilos te permiten crear efectos visuales atractivos y dinámicos en tus páginas web.
