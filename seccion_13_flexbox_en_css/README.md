@@ -1,62 +1,172 @@
-# curso_universidad_css
+# Flexbox en CSS
 
 ---
 
-Un curso de CSS (Cascading Style Sheets) está diseñado para enseñar a los estudiantes cómo usar CSS para diseñar y estilizar páginas web. CSS es el lenguaje utilizado para describir la presentación de un documento escrito en HTML o XML. Aquí tienes una descripción general de lo que podría cubrir un curso de CSS:
+Flexbox (o Flexible Box Layout) es un modelo de diseño en CSS que se utiliza para distribuir espacio y alinear elementos dentro de un contenedor, incluso cuando el tamaño de estos es desconocido o dinámico. Este sistema es particularmente útil para crear diseños de interfaz de usuario complejos y responsivos.
 
-### Introducción a CSS
-- **¿Qué es CSS?**: Explicación de CSS y su relación con HTML.
-- **Sintaxis Básica**: Selectores, propiedades y valores.
-- **Cómo Incluir CSS en HTML**:
-  - CSS en línea (inline).
-  - CSS interno (en la etiqueta `<style>`).
-  - CSS externo (en archivos `.css`).
+### Conceptos Básicos de Flexbox
 
-### Selectores y Propiedades
-- **Selectores Básicos**: Tipo, clase, ID.
-- **Selectores de Atributo**: `[atributo]`, `[atributo=valor]`.
-- **Selectores de Pseudoclases**: `:hover`, `:active`, `:nth-child()`.
-- **Selectores de Pseudoelementos**: `::before`, `::after`.
+En Flexbox, hay dos componentes principales:
 
-### Box Model
-- **Concepto de Box Model**: Content, padding, border, margin.
-- **Manipulación del Box Model**: Propiedades como `width`, `height`, `padding`, `border`, `margin`.
+- **Contenedor flex (flex container):** El elemento que tiene la propiedad `display: flex` o `display: inline-flex`.
+- **Ítems flex (flex items):** Los elementos hijos directos del contenedor flex.
 
-### Estilización de Texto y Fuentes
-- **Propiedades de Texto**: `color`, `font-family`, `font-size`, `font-weight`, `line-height`, `text-align`, `text-decoration`.
-- **Fuentes Web**: Uso de fuentes externas como Google Fonts.
+### Propiedades del Contenedor Flex
 
-### Colores y Fondos
-- **Colores**: Colores por nombre, hexadecimales, RGB, RGBA, HSL.
-- **Fondos**: `background-color`, `background-image`, `background-repeat`, `background-position`, `background-size`.
+1. **`display: flex`**
+   Define un contenedor flex.
 
-### Diseño y Layout
-- **Display y Visibilidad**: `display`, `visibility`.
-- **Positioning**: `static`, `relative`, `absolute`, `fixed`, `sticky`.
-- **Float y Clear**: `float`, `clear`.
-- **Flexbox**: Conceptos básicos y propiedades (`display: flex`, `justify-content`, `align-items`, etc.).
-- **Grid Layout**: Conceptos básicos y propiedades (`display: grid`, `grid-template-columns`, `grid-template-rows`, etc.).
+   ```css
+   .contenedor {
+     display: flex;
+   }
+   ```
 
-### Animaciones y Transiciones
-- **Transiciones**: `transition-property`, `transition-duration`, `transition-timing-function`.
-- **Animaciones**: `@keyframes`, `animation-name`, `animation-duration`, `animation-timing-function`.
+2. **`flex-direction`**
+   Define la dirección en la que los ítems flex se organizan dentro del contenedor.
 
-### Responsive Design
-- **Media Queries**: Uso de media queries para adaptar el diseño a diferentes tamaños de pantalla.
-- **Diseño Fluido**: Uso de unidades relativas como `%`, `em`, `rem`.
-- **Frameworks de CSS**: Introducción a frameworks como Bootstrap para facilitar el diseño responsivo.
+   ```css
+   .contenedor {
+     flex-direction: row; /* valores: row, row-reverse, column, column-reverse */
+   }
+   ```
 
-### Buenas Prácticas y Optimización
-- **Organización del Código**: Estructurar CSS de manera clara y mantenible.
-- **Preprocesadores de CSS**: Introducción a Sass y LESS.
-- **Optimización del Rendimiento**: Minimización de CSS, uso eficiente de selectores.
+3. **`flex-wrap`**
+   Define si los ítems flex deben ajustarse o no en una nueva línea.
 
-### Proyectos Prácticos
-- **Diseño de una Página Web Completa**: Aplicación de los conceptos aprendidos para crear un sitio web desde cero.
-- **Desafíos y Ejercicios**: Ejercicios prácticos para reforzar el aprendizaje.
+   ```css
+   .contenedor {
+     flex-wrap: nowrap; /* valores: nowrap, wrap, wrap-reverse */
+   }
+   ```
 
-### Recursos Adicionales
-- **Documentación y Recursos**: MDN Web Docs, CSS-Tricks, W3Schools.
-- **Herramientas y Extensiones**: DevTools en navegadores, editores de código como Visual Studio Code.
+4. **`justify-content`**
+   Define cómo se distribuye el espacio entre los ítems flex a lo largo del eje principal.
 
-Este es un esquema básico que puede variar según la profundidad y el enfoque del curso. Un buen curso de CSS debe combinar teoría con mucha práctica, ya que la mejor manera de aprender CSS es aplicándolo a proyectos reales.
+   ```css
+   .contenedor {
+     justify-content: center; /* valores: flex-start, flex-end, center, space-between, space-around, space-evenly */
+   }
+   ```
+
+5. **`align-items`**
+   Define cómo se alinean los ítems flex a lo largo del eje transversal.
+
+   ```css
+   .contenedor {
+     align-items: center; /* valores: flex-start, flex-end, center, baseline, stretch */
+   }
+   ```
+
+6. **`align-content`**
+   Define cómo se distribuye el espacio entre las líneas del contenedor flex cuando hay múltiples líneas.
+
+   ```css
+   .contenedor {
+     align-content: space-between; /* valores: flex-start, flex-end, center, space-between, space-around, stretch */
+   }
+   ```
+
+### Propiedades de los Ítems Flex
+
+1. **`order`**
+   Define el orden de los ítems flex dentro del contenedor.
+
+   ```css
+   .item {
+     order: 1; /* valores: enteros positivos o negativos */
+   }
+   ```
+
+2. **`flex-grow`**
+   Define la capacidad de un ítem flex para crecer si es necesario.
+
+   ```css
+   .item {
+     flex-grow: 1; /* valores: números positivos */
+   }
+   ```
+
+3. **`flex-shrink`**
+   Define la capacidad de un ítem flex para encogerse si es necesario.
+
+   ```css
+   .item {
+     flex-shrink: 1; /* valores: números positivos */
+   }
+   ```
+
+4. **`flex-basis`**
+   Define la base flexible del ítem flex, es decir, el tamaño inicial antes de que se distribuya el espacio restante.
+
+   ```css
+   .item {
+     flex-basis: 100px; /* valores: tamaño (px, %, etc.) */
+   }
+   ```
+
+5. **`align-self`**
+   Permite que un ítem flex anule la alineación a lo largo del eje transversal definida por el contenedor.
+
+   ```css
+   .item {
+     align-self: center; /* valores: auto, flex-start, flex-end, center, baseline, stretch */
+   }
+   ```
+
+### Ejemplo Completo
+
+Aquí tienes un ejemplo práctico que ilustra el uso de Flexbox:
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .contenedor {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      height: 200px;
+      border: 2px solid black;
+    }
+
+    .item {
+      background-color: lightblue;
+      padding: 20px;
+      margin: 10px;
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-basis: 100px;
+      text-align: center;
+    }
+
+    .item2 {
+      order: -1; /* Este ítem aparecerá primero */
+    }
+  </style>
+</head>
+<body>
+  <div class="contenedor">
+    <div class="item">Item 1</div>
+    <div class="item item2">Item 2</div>
+    <div class="item">Item 3</div>
+    <div class="item">Item 4</div>
+  </div>
+</body>
+</html>
+```
+
+### Explicación del Ejemplo
+
+- **`.contenedor`:** Es el contenedor flex que define la dirección de los ítems como fila (`row`), permite el ajuste de los ítems (`wrap`), distribuye los ítems con espacios alrededor (`space-around`) y alinea los ítems en el centro a lo largo del eje transversal (`center`).
+- **`.item`:** Cada ítem tiene un color de fondo, padding, margin y propiedades flexibles (`flex-grow`, `flex-shrink`, `flex-basis`).
+- **`.item2`:** Este ítem tiene un orden de -1, por lo que aparece primero a pesar de estar en el segundo lugar en el HTML.
+
+### Resumen
+
+Flexbox es una poderosa herramienta para crear diseños responsivos y alineados de manera eficiente. Sus propiedades permiten un control detallado sobre la distribución y alineación de los elementos dentro de un contenedor. Con Flexbox, puedes crear diseños complejos y adaptativos con menos esfuerzo y código más limpio.
